@@ -1,5 +1,9 @@
 // 할일 #2
 // 아래에 todo-list 컴포넌트를 구현
+Vue.component('todo-list', {
+  props: ['language'],
+  template: '<p>{{ language.text }}</p>'
+});
 
 
 Vue.component('todo-item', {
@@ -16,6 +20,12 @@ var app = new Vue({
       { id: 2, text: 'Learn Props' },
       { id: 3, text: 'Learn For Loop' }
     ],
+    Languages :[
+      { id: 0, text: 'Learn python' },
+      { id: 1, text: 'Learn c++' },
+      { id: 2, text: 'Learn java' },
+      { id: 3, text: 'Learn objective-c' }
+    ]
     // 할일 #1
     // 배열 안에 python, c++, java, objective-c 를 값으로 갖는
     // Languages 프로퍼티를 추가하여 위에 제작한 todo-list 컴포넌트에 전달하고,

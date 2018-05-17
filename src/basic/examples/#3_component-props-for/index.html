@@ -9,11 +9,11 @@
     <!-- Parent Component -->
     <div id="app">
       <!-- Child Component -->
-      <todo-item v-bind:todo="todo" v-for="todo in Todos"></todo-item>
+      <todo-item v-bind:todo="item" v-for="item in Todos" :key="item.id"></todo-item>
 
       <!-- 할일 #3 -->
       <!-- todo-list 컴포넌트 등록 -->
-
+      <todo-list v-bind:language="item" v-for="item in Languages" :key="item.id"></todo-list>
     </div>
     <script src="../vendor/vue.js"></script>
     <script src="js/app.js"></script>
