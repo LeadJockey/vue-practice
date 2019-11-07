@@ -1,18 +1,18 @@
 <template>
-  <div class="game_stage_1">
-    <MatrixDev :stage="stage1"></MatrixDev>
+  <div class="game_stage_3">
+    <MatrixDev :stage="stage3"></MatrixDev>
   </div>
 </template>
 
 <script>
 import MatrixDev from './MatrixDev'
-import { stage1 } from './../constants'
+import { stage3 } from './../constants'
 
 export default {
-  name: 'game-state-1',
+  name: 'game-state-3',
   data() {
     return {
-      stage1
+      stage3
     }
   },
   components: {
