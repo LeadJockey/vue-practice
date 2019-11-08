@@ -13,6 +13,9 @@
        <li>
         <router-link to="/stages/4" class="link_stage">Stage 4</router-link>
       </li>
+       <li>
+        <router-link to="/stages/5" class="link_stage">Stage 5</router-link>
+      </li>
     </ul>
   </div>
 </template>

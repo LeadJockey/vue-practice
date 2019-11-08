@@ -5,6 +5,7 @@ import Stage1 from './components/Stage1'
 import Stage2 from './components/Stage2'
 import Stage3 from './components/Stage3'
 import Stage4 from './components/Stage4'
+import Stage5 from './components/Stage5'
 
 Vue.use(Router)
 
@@ -35,6 +36,11 @@ const router = new Router({
       path: '/stages/4',
       name: 'Stage 4',
       component: Stage4
+    },
+    {
+      path: '/stages/5',
+      name: 'Stage 5',
+      component: Stage5
     },
     { path: '*', redirect: '/' }
   ],
