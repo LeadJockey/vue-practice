@@ -52,20 +52,22 @@ div,
 p {
   color: #f8f9fa;
   font-weight: 600;
+  font-size:14px;
 }
 body {
   background-color: #1e2128;
 }
 #app {
+  position:relative;
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
 }
 .app_body {
-  height: calc(100% - 60px);
-  overflow-x: auto;
-  overflow-y: scroll;
+  /* height: calc(100% - 60px); */
+  /* overflow-x: auto;
+  overflow-y: scroll; */
 }
 .app_body > div {
   height: 100%;
