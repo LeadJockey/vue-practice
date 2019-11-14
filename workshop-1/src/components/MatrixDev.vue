@@ -70,7 +70,7 @@ export default {
       searchFound: false,
       isProcessEnded: true,
       processList: [],
-      fps: 500,
+      fps: 300,
       showMatrix: false,
       showIdx: false,
       boxStyle: {
@@ -163,8 +163,41 @@ export default {
     moveTo(nextPos) {
       this.currPos = nextPos
     },
-    moveToSearch(nextPos) {
-      this.searchPos = nextPos
+    left() {
+      const nextPos = this.getNextLeftPos()
+      const able = this.isHorizontal(nextPos, 'currRow')
+      if (able) {
+        this.moveTo(nextPos)
+      } else {
+        throw new Error('이동할수 없어요!')
+      }
+    },
+    up() {
+      const nextPos = this.getNextUpPos()
+      const able = this.isVertical(nextPos, 'currRow')
+      if (able) {
+        this.moveTo(nextPos)
+      } else {
+        throw new Error('이동할수 없어요!')
+      }
+    },
+    right() {
+      const nextPos = this.getNextRightPos()
+      const able = this.isHorizontal(nextPos, 'currRow')
+      if (able) {
+        this.moveTo(nextPos)
+      } else {
+        throw new Error('이동할수 없어요!')
+      }
+    },
+    down() {
+      const nextPos = this.getNextDownPos()
+      const able = this.isVertical(nextPos, 'currRow')
+      if (able) {
+        this.moveTo(nextPos)
+      } else {
+        throw new Error('이동할수 없어요!')
+      }
     },
     async exec() {
       this.isProcessEnded = false
@@ -190,6 +223,9 @@ export default {
         alert(`SUCCESS`)
         this.setInitialProcessData()
       }
+    },
+    moveToSearch(nextPos) {
+      this.searchPos = nextPos
     },
     async search(directions) {
       this.searchFound = false
@@ -256,42 +292,6 @@ export default {
         this.processList[idx].count = Number(loopCount)
       } catch (e) {
         alert(`아니 에게 무슨일이야~\n${e.message}`)
-      }
-    },
-    left() {
-      const nextPos = this.getNextLeftPos()
-      const able = this.isHorizontal(nextPos, 'currRow')
-      if (able) {
-        this.moveTo(nextPos)
-      } else {
-        throw new Error('이동할수 없어요!')
-      }
-    },
-    up() {
-      const nextPos = this.getNextUpPos()
-      const able = this.isVertical(nextPos, 'currRow')
-      if (able) {
-        this.moveTo(nextPos)
-      } else {
-        throw new Error('이동할수 없어요!')
-      }
-    },
-    right() {
-      const nextPos = this.getNextRightPos()
-      const able = this.isHorizontal(nextPos, 'currRow')
-      if (able) {
-        this.moveTo(nextPos)
-      } else {
-        throw new Error('이동할수 없어요!')
-      }
-    },
-    down() {
-      const nextPos = this.getNextDownPos()
-      const able = this.isVertical(nextPos, 'currRow')
-      if (able) {
-        this.moveTo(nextPos)
-      } else {
-        throw new Error('이동할수 없어요!')
       }
     },
     async searchLeft() {
@@ -460,5 +460,4 @@ export default {
 .insert_btns button:nth-child(4) {
   background-color: #007bff;
 }
-
 </style>
